@@ -1,0 +1,18 @@
+{
+  "name": "grunt-assignment",
+  "version": "0.0.1",
+  "description": "Add gruntfile.js and package.json to simple module",
+  "main": "calc.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "example",
+    "simple"
+  ],
+  "author": "Nick Landazuri",
+  "license": "ISC"
+}

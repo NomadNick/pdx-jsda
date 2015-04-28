@@ -4,30 +4,26 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      files: ['./*.js', 'test/**/*.js'],
+      all: ['./*.js', 'test/**/*.js'],
       options: {
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true,
-          document: true
-        }
+        node: true,
+        mocha: true
       }
     },
-    simplemocha: {
-      options: {
 
-      },
-    all: { src: ['test/**/*.js'] }
-      },
-      watch: {
-      files: ['./*.js', 'test/**/*.js'],
+    simplemocha: {
+      all: { src: ['test/**/*.js'] }
+    },
+
+    watch: {
+      all: ['./*.js', 'test/**/*.js'],
       tasks: ['jshint', 'simplemocha']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('test', ['simplemocha']);
 
